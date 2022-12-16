@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 function App() {
   const [todoList, setTodoList] = useState([]);
-  const [newTask, setNewTask] = useState("");
+  const [newTask, setNewTask] = useState();
 
   const handleChange = (event) => {
-    setNewTask(event.target.value);
+    setNewTask(event.target.value);  
   };
 
   const addTask = () => {
@@ -15,6 +15,7 @@ function App() {
       taskName: newTask,
     };
     setTodoList([...todoList, task]);
+  
   };
 
   const deleteTask = (id) => {
@@ -37,7 +38,7 @@ function App() {
     <div className="App">
       <div className="addTask">
         <h1>ToDo List</h1>
-        <input onChange={handleChange}/>
+        <input onChange={handleChange} placeholder='Add Task' />
         <button onClick={addTask}>Add Task</button>
       </div>
       <div className="list">
@@ -45,11 +46,11 @@ function App() {
           return (
             <div 
             className="task"
-            style={{backgroundColor: task.completed ? "green" : "white"}}
+            style={{backgroundColor: task.completed ? "green" : "rgba(245, 84, 51, 0.5"}}
             >
               <li>{task.taskName}</li>
-              <button onClick={() => deleteTask(task.id)}>Delete</button>
               <button onClick={() => completeTask(task.id)}>Complete</button>
+              <button onClick={() => deleteTask(task.id)}>Delete</button>
             </div>
             
           );

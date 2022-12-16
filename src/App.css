@@ -38,9 +38,13 @@
 }
 .list li{
   display: flex;
+  justify-content: center;
   margin: 20px 0;
 }
 
+.list .task {
+  text-align: center;
+}
 
 div#root {
   position: relative;
