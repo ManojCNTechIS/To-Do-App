@@ -4,6 +4,7 @@ import { useState } from 'react';
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState();
+  
 
   const handleChange = (event) => {
     setNewTask(event.target.value);  
@@ -15,7 +16,7 @@ function App() {
       taskName: newTask,
     };
     setTodoList([...todoList, task]);
-  
+    setNewTask('');
   };
 
   const deleteTask = (id) => {
@@ -38,7 +39,7 @@ function App() {
     <div className="App">
       <div className="addTask">
         <h1>ToDo List</h1>
-        <input onChange={handleChange} placeholder='Add Task' />
+        <input id = "newTask" onChange={handleChange} placeholder='Add Task' value={newTask} />
         <button onClick={addTask}>Add Task</button>
       </div>
       <div className="list">
