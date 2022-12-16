@@ -4,7 +4,7 @@
 }
 
 .App {
-  background-color: green;
+  background-color: gray;
   width: 100%;
   min-height: 80vh;
   display: flex;
@@ -30,7 +30,7 @@
   outline: none;
   font-size: 1vw;
   color: rgb(15, 15, 15);
-  background-color: rgb(13, 219, 205);
+  
   border-radius: 10px;
   top: 20vw;
   right: 41vw;
@@ -40,15 +40,7 @@
   display: flex;
   margin: 20px 0;
 }
-.task {
-  width: 500px;
-  height: 50px;
-  display: flex;
-  margin: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 div#root {
   position: relative;
